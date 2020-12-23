@@ -1,0 +1,90 @@
+/* Choice Button */
+.CreateRoom__Choice {
+   display: flex;
+   justify-content: center;
+   width: 100%;
+   margin-bottom: 15px;
+   cursor: pointer;
+}
+
+.CreateRoom__Choice div {
+   text-align: center;
+   width: 100px;
+   margin: 0 10px;
+   font-size: 17px;
+   font-weight: bold;
+   color: var(--primary);
+   border-radius: 4px;
+   -webkit-user-select: none;
+   -moz-user-select: none;
+   -ms-user-select: none;
+   user-select: none;
+   transition: all 0.4s;
+}
+
+.CreateRoom__Choice div:hover,
+.CreateRoom__Choice div.active {
+   color: white;
+   background: linear-gradient(
+      to right,
+      var(--gradient-from),
+      var(--gradient-to)
+   );
+   box-shadow: 1px 1px 8px var(--primary);
+}
+
+/* Title */
+.CreateRoom__Title {
+   font: 700 24px/30px var(--font-family);
+   margin-bottom: 5px;
+   letter-spacing: 0.5px;
+}
+
+/* Input Group */
+.CreateRoom__InputGroup {
+   margin-bottom: 16px;
+   letter-spacing: 0.5px;
+}
+
+.CreateRoom__InputGroup label {
+   font-weight: 600;
+}
+
+.CreateRoom__InputGroup input {
+   width: 340px;
+   outline: none;
+   padding: 4px 10px 0px 0;
+   font: 400 17px var(--font-family);
+   letter-spacing: 0.5px;
+   border-bottom: 1px solid #aaa;
+   transition: all 0.3s;
+}
+
+.CreateRoom__InputGroup input:hover,
+.CreateRoom__InputGroup input:focus {
+   border-bottom-color: #333;
+}
+
+/* File Input */
+.CreateRoom__InputGroup input[type="file"] {
+   width: auto;
+   border: none;
+}
+
+/* Button Group */
+.CreateRoom__BtnGroup button {
+   margin-left: 20px;
+   outline: none;
+   border: none;
+   font-size: 16px;
+   font-weight: bold;
+   transition: all 0.3s;
+}
+
+.CreateRoom__BtnGroup button:first-of-type {
+   color: #d61d1d;
+}
+
+.CreateRoom__BtnGroup button:last-of-type {
+   color: var(--primary);
+}

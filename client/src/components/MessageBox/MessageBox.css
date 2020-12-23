@@ -1,0 +1,6 @@
+.MessageBox__Message {
+   max-width: 300px;
+   min-width: 200px;
+   border-radius: 5px;
+   box-shadow: 2px 2px 6px #666, -2px -2px 4px #fff;
+}

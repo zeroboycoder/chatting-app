@@ -1,0 +1,68 @@
+.InputBox {
+   position: relative;
+}
+
+/* Emoji Mart */
+.InputBox__EmojiMart {
+   position: absolute;
+   bottom: 50px;
+   right: 0;
+}
+
+/* Input Box */
+.InputBox__Input {
+   position: relative;
+}
+
+/* InputBox --> Input */
+.InputBox__Input input {
+   width: 100%;
+   font-size: 15px;
+   padding: 5px 20px;
+   border-radius: 25px;
+   outline: none;
+}
+
+/* InputBox --> Emoji icon */
+.InputBox__Input__Emoji {
+   position: absolute;
+   right: 10px;
+   top: 50%;
+   transform: translateY(-50%);
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   width: 36px;
+   height: 36px;
+   border-radius: 50%;
+   cursor: pointer;
+}
+
+.InputBox__Input__Emoji i {
+   font-size: 20px;
+   color: var(--primary);
+}
+
+.InputBox__Input__Emoji:hover {
+   background-color: #ccc;
+}
+
+/* Sent Button */
+.InputBox__Button {
+   margin-left: 25px;
+   width: 90px;
+   height: 30px;
+   color: var(--primary);
+   border-radius: 7px;
+   transition: all 0.3s;
+}
+
+.InputBox__Button:hover,
+.InputBox__Button:active {
+   color: white;
+   background: linear-gradient(
+      to right,
+      var(--gradient-from),
+      var(--gradient-to)
+   );
+}

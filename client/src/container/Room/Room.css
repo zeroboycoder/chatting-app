@@ -1,0 +1,87 @@
+.Room {
+   position: relative;
+   height: calc(100vh - 57px);
+}
+
+.Room__Nav {
+   box-shadow: 0px 1px 4px #333;
+}
+
+.Room__Nav div p {
+   color: var(--primary);
+   margin-left: 16px;
+   font-size: 20px;
+   font-weight: 700;
+}
+
+.Room__Nav div abbr {
+   text-decoration: none;
+   color: var(--primary);
+   font-size: 28px;
+   font-weight: 700;
+   width: 36px;
+   height: 36px;
+   margin-right: 20px;
+   border: 1px solid #ccc;
+   border-radius: 50%;
+   box-shadow: 1px 1px 5px #777;
+   cursor: pointer;
+   transition: all 0.3s;
+}
+
+.Room__Nav div abbr:hover,
+.Room__Nav div abbr:active,
+.Room__AddMember button:hover,
+.Room__AddMember button:active {
+   color: white;
+   background: linear-gradient(
+      to right,
+      var(--gradient-from),
+      var(--gradient-to)
+   );
+}
+
+.Room__Body__Left,
+.Room__Body__Right {
+   margin-top: 2px;
+   height: calc(100vh - 115px);
+}
+
+.Room__Body__Left {
+   overflow: scroll;
+}
+
+.Room__Body__Right__MessageBox {
+   height: calc(100% - 56px);
+   overflow: scroll;
+}
+
+.Room__Body__Right__InputBox {
+   height: 56px;
+   padding: 5px 20px;
+   background-color: #bcbcbc;
+}
+
+.Room__Body__Right__MessageBox::-webkit-scrollbar {
+   width: 10px;
+}
+
+/* Modal */
+.Room__AddMember input {
+   border-bottom: 1px solid #aaa;
+   transition: all 0.3s;
+}
+
+.Room__AddMember input:hover,
+.Room__AddMember input:focus {
+   border-color: var(--primary);
+}
+
+.Room__AddMember button {
+   font: 700 16px var(--font-family);
+   color: var(--primary);
+   padding: 5px 24px;
+   border: 1px solid #ccc;
+   border-radius: 6px;
+   box-shadow: 1px 1px 6px #00000080;
+}

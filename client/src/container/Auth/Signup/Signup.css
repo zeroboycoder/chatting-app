@@ -1,0 +1,16 @@
+.Signup {
+   height: calc(100vh - 57px);
+}
+
+.Signup_Left {
+   background: linear-gradient(90deg, var(--gradient-from), var(--gradient-to));
+}
+
+.Signup_Bg {
+   width: 320px;
+   height: auto;
+}
+
+.Signup_Left p {
+   font-size: 42px;
+}

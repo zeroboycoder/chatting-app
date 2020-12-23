@@ -1,0 +1,10 @@
+.RoomBox {
+   height: 76px;
+   transition: all 0.3s;
+}
+
+.RoomBox:hover,
+.RoomBox:active,
+.RoomBox.active {
+   background-color: #dedede;
+}

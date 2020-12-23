@@ -1,0 +1,26 @@
+.Flash {
+   position: fixed;
+   z-index: 1200;
+   top: 50px;
+   left: 50%;
+   transform: translateX(-50%);
+   width: 50%;
+   height: 50px;
+   font: 400 16px var(--font_family);
+   letter-spacing: 0.5px;
+   border: none;
+   border: 1px solid #bcbcbc;
+   border-radius: 5px;
+}
+
+.success {
+   color: #0a8126;
+   background-color: #c3f5ce;
+   box-shadow: 1px 1px 10px #0a8126;
+}
+
+.fail {
+   color: #d8182b;
+   background-color: #f7e9ea;
+   box-shadow: 1px 1px 10px #c92838;
+}

@@ -1,0 +1,48 @@
+.AuthInput__Icon,
+.AuthInput__Input {
+   box-shadow: 1px 1px 4px #00000049;
+}
+
+.AuthInput__Icon {
+   color: var(--primary);
+}
+
+.AuthInput__Input {
+   width: 280px;
+   padding: 7px 0 7px 15px;
+}
+
+.AuthInput__Input:focus {
+   box-shadow: 1px 1px 2px #00000061 inset;
+}
+
+.AuthBtn,
+.AuthBtn:focus {
+   outline: none;
+   padding: 5px 24px;
+   background: linear-gradient(
+      to right,
+      var(--gradient-from),
+      var(--gradient-to)
+   );
+   transition: all 0.3s;
+}
+
+.AuthBtn:hover,
+.AuthBtn:active {
+   outline: none;
+   background: linear-gradient(
+      to right,
+      var(--gradient-to),
+      var(--gradient-from)
+   );
+}
+
+.AuthBtn:disabled {
+   background: gray;
+   cursor: not-allowed;
+}
+
+.AuthBtn:not(:disabled) {
+   animation: notDisable 0.3s linear;
+}
