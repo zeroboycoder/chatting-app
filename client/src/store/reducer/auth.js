@@ -4,6 +4,7 @@ const initState = {
    userId: "",
    name: "",
    email: "",
+   avatar: "",
    loading: false,
 };
 
@@ -22,6 +23,7 @@ export const reducer = (state = initState, action) => {
             userId: action.user._id,
             name: action.user.name,
             email: action.user.email,
+            avatar: action.user.avatar,
             loading: false,
          };
       }
@@ -39,6 +41,7 @@ export const reducer = (state = initState, action) => {
             userId: action.user._id,
             name: action.user.name,
             email: action.user.email,
+            avatar: action.user.avatar,
             loading: false,
          };
       }

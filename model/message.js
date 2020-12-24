@@ -9,6 +9,9 @@ const messageSchema = new mongoose.Schema({
       type: String,
       required: true,
    },
+   senderAvatar: {
+      type: String,
+   },
    message: {
       type: String,
       required: true,

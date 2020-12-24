@@ -13,11 +13,12 @@ exports.loadMessage = async (req, res, next) => {
 };
 
 exports.createMessage = async (req, res, next) => {
-   const { roomId, sender, message } = req.body;
+   const { roomId, sender, senderAvatar, message } = req.body;
    const time = moment().format("LT");
    const messageObj = new messageModel({
       roomId,
       sender,
+      senderAvatar,
       message,
       time,
    });

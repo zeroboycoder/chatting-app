@@ -29,6 +29,7 @@ class Room extends Component {
       this.props.onLoadMessages(roomId);
 
       // For Socket IO client
+      // const socket = io("http://localhost:5000");
       const socket = io("https://me3t.herokuapp.com/");
       socket.on("createMsg", (data) => {
          console.log(data);
@@ -88,6 +89,7 @@ class Room extends Component {
       const data = {
          roomId: this.state.roomId,
          sender: this.props.username,
+         senderAvatar: this.props.userAvatar,
          message: this.state.inputText,
       };
       this.props.onSentMessage(data);
@@ -247,6 +249,7 @@ class Room extends Component {
 const stateToProps = (state) => {
    return {
       username: state.auth.name,
+      userAvatar: state.auth.avatar,
       rooms: state.room.rooms,
       roomName: state.message.roomName,
       messages: state.message.messages,

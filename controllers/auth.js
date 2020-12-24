@@ -32,6 +32,7 @@ exports.createUser = (req, res, next) => {
             _id: newUser._id,
             name: newUser.name,
             email: newUser.email,
+            avatar: newUser.avatar,
          };
          return res.status(200).json({ token, userObj });
       } catch (error) {
@@ -58,6 +59,7 @@ exports.verifyUser = async (req, res, next) => {
             _id: user._id,
             name: user.name,
             email: user.email,
+            avatar: user.avatar,
          };
          return res.status(200).json({ token, userObj });
       });
@@ -78,6 +80,7 @@ exports.signinwithfb = async (req, res, next) => {
             _id: hasUser._id,
             name: hasUser.name,
             email: hasUser.email,
+            avatar: hasUser.avatar,
          };
          return res.status(201).json({ token, userObj });
       } else {
@@ -94,6 +97,7 @@ exports.signinwithfb = async (req, res, next) => {
             _id: newUser._id,
             name: newUser.name,
             email: newUser.email,
+            avatar: newUser.avatar,
          };
          return res.status(201).json({ token, userObj });
       }

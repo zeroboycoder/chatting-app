@@ -1,6 +1,6 @@
 import React from "react";
 import "./MessageBox.css";
-import senderPf from "../../asset/roombox.png";
+import senderPf from "../../asset/default.jpg";
 
 const MessageBox = (props) => {
    const messageBoxClasses = ["MessageBox", "m-4", "flex"];
@@ -9,7 +9,9 @@ const MessageBox = (props) => {
    let senderName = props.message.sender;
    let senderProfile = (
       <img
-         src={senderPf}
+         src={
+            props.message.senderAvatar ? props.message.senderAvatar : senderPf
+         }
          alt="Sender profile"
          className="w-7 h-7 rounded-full"
       />
