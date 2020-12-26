@@ -1,0 +1,7 @@
+.Profile {
+   height: calc(100vh - 57px);
+}
+
+.Profile__Body p {
+   margin: 10px 0;
+}

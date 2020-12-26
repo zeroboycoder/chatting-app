@@ -38,12 +38,12 @@ const Toolbar = (props) => {
             >
                <li>
                   <NavLink to="/profile" onClick={toggleDropDown}>
-                     <i class="far fa-user-circle"></i>Profile
+                     <i className="far fa-user-circle"></i>Profile
                   </NavLink>
                </li>
                <li>
                   <span className="Toolbar__Logout" onClick={logoutFun}>
-                     <i class="fas fa-sign-out-alt"></i>Logout
+                     <i className="fas fa-sign-out-alt"></i>Logout
                   </span>
                </li>
             </ul>

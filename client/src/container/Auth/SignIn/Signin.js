@@ -68,7 +68,7 @@ class SignIn extends Component {
       this.props.history.push("/signup");
    };
 
-   // FB response callback
+   // Facebook Login Section
    responseFacebook = (response) => {
       const data = {
          fid: response.id,
@@ -120,15 +120,14 @@ class SignIn extends Component {
 
       // Facebook Login Btn
       const fbLogin = (
-         <div className="">
-            <FacebookLogin
-               appId="327829561590465"
-               autoLoad={true}
-               fields="name,email,picture"
-               callback={this.responseFacebook}
-               cssClass="FB_Login_Btn"
-            />
-         </div>
+         <FacebookLogin
+            appId="327829561590465"
+            autoLoad={true}
+            fields="name,email,picture"
+            scope="public_profile,user_friends"
+            callback={this.responseFacebook}
+            cssClass="FB_Login_Btn" // App.css
+         />
       );
 
       return (
