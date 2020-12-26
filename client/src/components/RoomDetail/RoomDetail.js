@@ -13,7 +13,7 @@ const RoomDetail = (props) => {
                <img
                   src={avatar}
                   alt="User Avatar"
-                  className="w-10 h-10 mr-2 rounded-full"
+                  className="w-9 h-9 mr-2 rounded-full"
                />
                <p>{member.name}</p>
                {props.ownerId === member._id ? (
@@ -35,7 +35,7 @@ const RoomDetail = (props) => {
             <div className="RoomDetail__Group">Room ID : {props._id} </div>
             <div className="RoomDetail__Group">
                <p>Members</p>
-               <div className="w-full">{members}</div>
+               <div className="w-full mt-1">{members}</div>
             </div>
          </div>
       </section>

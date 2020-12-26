@@ -29,8 +29,8 @@ class Room extends Component {
       this.props.onLoadMessages(roomId);
 
       // For Socket IO client
-      // const socket = io("http://localhost:5000");
-      const socket = io("https://me3t.herokuapp.com/");
+      const socket = io("http://localhost:5000");
+      // const socket = io("https://me3t.herokuapp.com/");
       socket.on("createMsg", (data) => {
          console.log(data);
          this.props.onAddMessage(data);

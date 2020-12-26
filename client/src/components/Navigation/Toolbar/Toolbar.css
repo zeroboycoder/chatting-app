@@ -9,19 +9,62 @@
    height: 56px;
 }
 
-.Toolbar__NavItems a:link,
-.Toolbar__NavItems a:visited,
-.Toolbar__Logout {
+.Toolbar__NavUl {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   height: 100%;
+}
+
+.Toolbar__NavUl li {
+   height: 100%;
+}
+
+.Toolbar__NavUl li:hover {
+   background-color: #eaeaea;
+}
+
+.Toolbar__NavUl a:link,
+.Toolbar__NavUl a:visited,
+.Toolbar__NavUl span {
+   display: flex;
+   align-items: center;
+   width: 100%;
+   height: 100%;
+   padding: 0 15px;
    font-size: 18px;
-   padding: 20px 15px;
    letter-spacing: 0.5px;
    cursor: pointer;
    transition: all 0.3s;
+   -webkit-user-select: none;
+   -moz-user-select: none;
+   -ms-user-select: none;
+   user-select: none;
 }
 
-.Toolbar__NavItems a:hover,
-.Toolbar__NavItems a:active,
-.Toolbar__NavItems a.active,
-.Toolbar__Logout:hover {
+.Toolbar__NavUl a:hover,
+.Toolbar__NavUl a:active,
+.Toolbar__NavUl a.active,
+.Toolbar__NavUl span:hover {
    color: var(--primary);
+}
+
+/* Dropdown */
+.dropdown {
+   height: 56px;
+}
+
+.dropdown li {
+   border: 1px solid #aaa;
+}
+
+.dropdown li i {
+   font-size: 20px;
+   margin-right: 7px;
+}
+
+.Toolbar__Logout,
+.Toolbar__Logout:hover,
+.Toolbar__Logout:active {
+   color: red;
 }
