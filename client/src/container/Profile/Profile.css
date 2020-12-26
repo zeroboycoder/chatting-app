@@ -5,3 +5,27 @@
 .Profile__Body p {
    margin: 10px 0;
 }
+
+/* Upload Avatar Modal */
+.uploadAvatarModal h2 {
+   color: var(--primary);
+}
+.uploadAvatarModal h2::after {
+   content: "";
+   display: block;
+   width: 140px;
+   height: 4px;
+   margin-top: 6px;
+   background: linear-gradient(
+      to right,
+      var(--gradient-to),
+      var(--gradient-from)
+   );
+}
+
+.uploadAvatarModal button {
+   border: none;
+   color: var(--primary);
+   font: 700 17px var(--font-family);
+   outline: none;
+}

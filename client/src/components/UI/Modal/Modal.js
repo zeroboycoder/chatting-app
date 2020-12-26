@@ -3,6 +3,8 @@ import "./Modal.css";
 import Backdrop from "../Backdrop/Backdrop";
 
 const Modal = (props) => {
+   // Requied props
+   // showed, clicked, children
    const classes = ["Modal"];
    if (props.showed) {
       classes.push("showModal");
