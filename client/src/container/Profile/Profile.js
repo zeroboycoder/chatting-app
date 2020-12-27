@@ -3,10 +3,12 @@ import { connect } from "react-redux";
 import "./Profile.css";
 import Modal from "../../components/UI/Modal/Modal";
 import defaultAvatar from "../../asset/default.jpg";
+import Spinner from "../../components/UI/Spinner/Spinner";
+import { onEditUserAvatar } from "../../store/action/rootAction";
 
 class Profile extends Component {
    state = {
-      showed: true,
+      showed: false,
       imageValue: "",
       base64ImageUrl: "",
    };
@@ -33,7 +35,12 @@ class Profile extends Component {
    };
 
    editAvatar = () => {
-      console.log("editAvatar");
+      const form = new FormData();
+      form.append("username", this.props.name);
+      form.append("userId", this.props.userId);
+      form.append("userAvatar", this.state.imageValue);
+      this.props.onEditUserAvatar(form);
+      this.setState({ showed: false, imageValue: "", base64ImageUrl: "" });
    };
 
    render() {
@@ -68,7 +75,7 @@ class Profile extends Component {
             </section>
          </Modal>
       );
-      const profile = (
+      let profile = (
          <div>
             {modal}
             <section className="Profile w-full flex flex-col justify-center items-center">
@@ -94,16 +101,25 @@ class Profile extends Component {
             </section>
          </div>
       );
+      if (this.props.loading) {
+         profile = <Spinner />;
+      }
       return profile;
    }
 }
 
 const stateToProps = (state) => {
    return {
+      userId: state.auth.userId,
       name: state.auth.name,
       email: state.auth.email,
       avatar: state.auth.avatar,
+      loading: state.auth.loading,
    };
 };
 
-export default connect(stateToProps)(Profile);
+const dispatchToProps = (dispatch) => ({
+   onEditUserAvatar: (data) => dispatch(onEditUserAvatar(data)),
+});
+
+export default connect(stateToProps, dispatchToProps)(Profile);

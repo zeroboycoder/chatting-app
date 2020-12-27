@@ -1,7 +1,7 @@
 const route = require("express").Router();
 const roomController = require("../controllers/room");
 const decodeMiddleware = require("../middleware/decodejwt");
-const { uploader } = require("../util/helper");
+const { roomImageUploader } = require("../util/helper");
 
 // Load Rooms
 route.get(
@@ -21,7 +21,7 @@ route.post(
 route.post(
    "/api/rooms/createroom",
    decodeMiddleware.decodejwt,
-   uploader.single("roomAvatar"),
+   roomImageUploader.single("roomAvatar"),
    roomController.createRoom
 );
 

@@ -13,6 +13,7 @@ export const reducer = (state = initState, action) => {
       case actionTypes.LOAD_USER_START:
       case actionTypes.SIGNUP_START:
       case actionTypes.SIGNIN_START:
+      case actionTypes.EDIT_USER_AVATAR_START:
          return {
             ...state,
             loading: true,
@@ -56,6 +57,18 @@ export const reducer = (state = initState, action) => {
             loading: false,
          };
       }
+      // Edit user avatar
+      case actionTypes.EDIT_USER_AVATAR_SUCCESS:
+         return {
+            ...state,
+            loading: false,
+            avatar: action.avatar,
+         };
+      case actionTypes.EDIT_USER_AVATAR_FAIL:
+         return {
+            ...state,
+            loading: false,
+         };
       default:
          return state;
    }

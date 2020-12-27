@@ -3,6 +3,7 @@ const config = require("config");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 const { has } = require("config");
+const { patch } = require("../routes/auth");
 
 // Get User
 exports.getUser = async (req, res, next) => {
@@ -103,5 +104,19 @@ exports.signinwithfb = async (req, res, next) => {
       }
    } catch (error) {
       console.log(error);
+   }
+};
+
+// Edit User Avatar
+exports.editUserAvatar = async (req, res, next) => {
+   const { userId } = req.body;
+   const { path } = req.file;
+   try {
+      const user = await userModel.findById(userId);
+      user.avatar = path;
+      const newUser = await user.save();
+      return res.status(200).json({ avatar: newUser.avatar });
+   } catch (err) {
+      return res.status(500).json({ msg: "Error in server" });
    }
 };

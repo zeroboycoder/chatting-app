@@ -1,6 +1,6 @@
 import axios from "axios";
 import * as actionTypes from "./actionTypes";
-import { onFlash } from "./flash";
+import { onFlash } from "./rootAction";
 
 // Load User
 const loadUserStart = () => {
@@ -130,4 +130,29 @@ export const onLogout = (props) => (dispatch) => {
    dispatch(onFlash("Logout Successfully", "success"));
    dispatch(logoutSuccess());
    props.history.push("/signin");
+};
+
+// Edit User Avatar
+const editUserAvatarStart = () => ({
+   type: actionTypes.EDIT_USER_AVATAR_START,
+});
+
+const editUserAvatarSuccess = (avatar) => ({
+   type: actionTypes.EDIT_USER_AVATAR_SUCCESS,
+   avatar,
+});
+
+const editUserAvatarFail = () => ({ type: actionTypes.EDIT_USER_AVATAR_FAIL });
+
+export const onEditUserAvatar = (data) => (dispatch) => {
+   dispatch(editUserAvatarStart());
+   axios
+      .patch("/api/auth/edit", data)
+      .then((response) => {
+         dispatch(editUserAvatarSuccess(response.data.avatar));
+      })
+      .catch((err) => {
+         dispatch(editUserAvatarFail());
+         dispatch(onFlash(err.response.data.msg, "fail"));
+      });
 };

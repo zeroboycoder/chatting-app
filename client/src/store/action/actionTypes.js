@@ -36,6 +36,19 @@ export const ADD_MESSAGE_SUCCESS = "ADD_MESSAGE_SUCCESS";
 // ==========
 export const ADD_MEMBER = "ADD_MEMBER";
 
+// ========
+// For User
+// ========
+export const EDIT_USER_AVATAR_START = "EDIT_USER_AVATAR_START";
+export const EDIT_USER_AVATAR_SUCCESS = "EDIT_USER_AVATAR_SUCCESS";
+export const EDIT_USER_AVATAR_FAIL = "EDIT_USER_AVATAR_FAIL";
+
+//==============
+// Flash Message
+//==============
+export const FLASH_START = "FLASH_START";
+export const FLASH_END = "FLASH_END";
+
 // =============================
 // Authentication & Authrization
 // =============================
@@ -56,9 +69,3 @@ export const SIGNIN_FAIL = "SIGNIN_FAIL";
 
 // Fot Logout
 export const LOGOUT_SUCCESS = "LOGOUT_SUCCESS";
-
-// -------------
-// Flash Message
-// -------------
-export const FLASH_START = "FLASH_START";
-export const FLASH_END = "FLASH_END";
