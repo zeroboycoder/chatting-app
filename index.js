@@ -25,7 +25,7 @@ app.use("/", member);
 io.on("connection", (socket) => {
    console.log("Client connected");
 
-   socket.broadcast.emit("boradcast_msg", "New user join the chat room");
+   // socket.broadcast.emit("boradcast_msg", "New user join the chat room");
 });
 
 // Configure For Production

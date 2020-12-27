@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { io } from "socket.io-client";
 import { connect } from "react-redux";
 import "./Room.css";
 import RoomBox from "../../components/RoomBox/RoomBox";
@@ -27,14 +26,6 @@ class Room extends Component {
 
       // Load Message
       this.props.onLoadMessages(roomId);
-
-      // For Socket IO client
-      const socket = io("http://localhost:5000");
-      // const socket = io("https://me3t.herokuapp.com/");
-      socket.on("createMsg", (data) => {
-         console.log(data);
-         this.props.onAddMessage(data);
-      });
 
       // Scroll To Bottom when ComponentDidMound
       this.scrollToBottom();
@@ -88,8 +79,7 @@ class Room extends Component {
    sentMessageHandler = () => {
       const data = {
          roomId: this.state.roomId,
-         sender: this.props.username,
-         senderAvatar: this.props.userAvatar,
+         senderId: this.props.userId,
          message: this.state.inputText,
       };
       this.props.onSentMessage(data);
@@ -248,6 +238,7 @@ class Room extends Component {
 
 const stateToProps = (state) => {
    return {
+      userId: state.auth.userId,
       username: state.auth.name,
       userAvatar: state.auth.avatar,
       rooms: state.room.rooms,

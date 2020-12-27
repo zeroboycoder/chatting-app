@@ -6,11 +6,8 @@ const messageSchema = new mongoose.Schema({
       required: true,
    },
    sender: {
-      type: String,
-      required: true,
-   },
-   senderAvatar: {
-      type: String,
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "user",
    },
    message: {
       type: String,
