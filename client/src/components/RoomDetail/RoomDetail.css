@@ -11,3 +11,54 @@
    margin: 5px 0;
    font: 400 17px var(--font-family);
 }
+
+/* Delete Room Button (Right Side) */
+.RoomDetail__Group button {
+   outline: none;
+   border: 1px solid #00000000;
+   transition: all 0.3s;
+}
+
+.RoomDetail__Group button:hover,
+.RoomDetail__Group button:active {
+   border: 1px solid red;
+}
+
+/* Delete room modal */
+.DeleteRoomModal {
+   width: 100%;
+   font-size: 17px;
+}
+
+.DeleteRoomBtnGroup button {
+   margin: 10px 0 0 5px;
+   padding: 5px 10px;
+   font: 700 16px var(--font-family);
+   border-radius: 4px;
+   outline: none;
+   transition: all 0.3s;
+}
+
+.DeleteRoomBtnGroup button:first-of-type {
+   color: red;
+}
+
+.DeleteRoomBtnGroup button:first-of-type:hover,
+.DeleteRoomBtnGroup button:first-of-type:active {
+   color: white;
+   background-color: red;
+}
+
+.DeleteRoomBtnGroup button:last-of-type {
+   color: var(--primary);
+}
+
+.DeleteRoomBtnGroup button:last-of-type:hover,
+.DeleteRoomBtnGroup button:last-of-type:active {
+   color: white;
+   background: linear-gradient(
+      to right,
+      var(--gradient-to),
+      var(--gradient-from)
+   );
+}

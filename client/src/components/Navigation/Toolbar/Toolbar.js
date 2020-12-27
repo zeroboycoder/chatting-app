@@ -26,8 +26,8 @@ const Toolbar = (props) => {
    let auth = <NavLink to="/signin">Sign In</NavLink>;
    if (localStorage.getItem("token")) {
       auth = (
-         <li>
-            <span onClick={toggleDropDown}>{props.username} </span>
+         <li onMouseEnter={toggleDropDown} onMouseLeave={toggleDropDown}>
+            <span>{props.username} </span>
             <ul
                className="dropdown"
                style={

@@ -1,5 +1,6 @@
 import React from "react";
 import "./RoomDetail.css";
+import Model from "../UI/Modal/Modal";
 import defaultAvatar from "../../asset/default.jpg";
 
 const RoomDetail = (props) => {
@@ -25,6 +26,20 @@ const RoomDetail = (props) => {
    }
    return (
       <section className="w-full">
+         <Model showed={props.showed} clicked={props.toggleDeleteRoomHandler}>
+            <div className="DeleteRoomModal">
+               <p>
+                  Are you sure to delete
+                  <span className="font-bold"> "{props.roomName}"</span>
+               </p>
+               <div className="DeleteRoomBtnGroup flex justify-end">
+                  <button onClick={props.toggleDeleteRoomHandler}>
+                     Cancel
+                  </button>
+                  <button onClick={props.deleteRoomHandler}>Delete</button>
+               </div>
+            </div>
+         </Model>
          <div className="w-full mt-8 flex flex-col justify-center items-center tracking-wide">
             <img
                src={props.roomAvatarUrl}
@@ -32,10 +47,18 @@ const RoomDetail = (props) => {
                className="RoomDetail__RoomAvatar"
             />
             <p className="mb-1 text-xl flex justify-center">{props.roomName}</p>
-            <div className="RoomDetail__Group">Room ID : {props._id} </div>
+            <div className="RoomDetail__Group">Room ID : {props._id}</div>
             <div className="RoomDetail__Group">
                <p>Members</p>
                <div className="w-full mt-1">{members}</div>
+            </div>
+            <div className="RoomDetail__Group">
+               <button
+                  className="px-6 py-1.5 font-bold text-red-600 cursor-pointer"
+                  onClick={props.toggleDeleteRoomHandler}
+               >
+                  Delete Room
+               </button>
             </div>
          </div>
       </section>

@@ -13,6 +13,7 @@ class Room extends Component {
       inputText: "",
       addMemberText: "",
       showed: false,
+      showDeleteRoomModal: false,
       roomId: "",
    };
 
@@ -99,6 +100,17 @@ class Room extends Component {
       this.setState({ addMemberText: "", showed: false });
    };
 
+   // Delete Room
+   // Show delete room modal
+   toggleDeleteRoomHandler = () => {
+      this.setState({ showDeleteRoomModal: !this.state.showDeleteRoomModal });
+   };
+
+   // Delete Room
+   deleteRoomHandler = () => {
+      console.log("Delete this room : ", this.state.roomId);
+   };
+
    render() {
       // Model fof Add Member
       const modal = (
@@ -173,6 +185,9 @@ class Room extends Component {
             roomAvatarUrl={roomAvatarUrl}
             roomName={this.props.roomName}
             roomMembers={roomMembers}
+            showed={this.state.showDeleteRoomModal}
+            toggleDeleteRoomHandler={this.toggleDeleteRoomHandler}
+            deleteRoomHandler={this.deleteRoomHandler}
          />
       );
 
