@@ -108,7 +108,9 @@ class Room extends Component {
 
    // Delete Room
    deleteRoomHandler = () => {
-      console.log("Delete this room : ", this.state.roomId);
+      this.props.onDeleteRoom(this.state.roomId);
+      this.toggleDeleteRoomHandler();
+      this.props.history.push("/");
    };
 
    render() {
@@ -265,6 +267,7 @@ const stateToProps = (state) => {
 const dispatchToProps = (dispatch) => {
    return {
       onLoadRoom: () => dispatch(actions.onLoadRoom()),
+      onDeleteRoom: (roomId) => dispatch(actions.onDeleteRoom(roomId)),
       onLoadMessages: (roomId) => dispatch(actions.onLoadMessages(roomId)),
       onSentMessage: (data) => dispatch(actions.onSentMessage(data)),
       onAddMessage: (data) => dispatch(actions.onAddMessage(data)),

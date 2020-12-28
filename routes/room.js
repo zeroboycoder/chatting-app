@@ -25,4 +25,11 @@ route.post(
    roomController.createRoom
 );
 
+// Delete Room
+route.delete(
+   "/api/rooms/delete/:roomId",
+   decodeMiddleware.decodejwt,
+   roomController.deleteRoom
+);
+
 module.exports = route;

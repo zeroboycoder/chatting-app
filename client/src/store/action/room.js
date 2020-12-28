@@ -118,3 +118,39 @@ export const onCreateRoom = (data) => (dispatch) => {
          dispatch(onFlash(err.response.data.msg, "fail"));
       });
 };
+
+// ===========
+// Delete Room
+// ===========
+const deleteRoomStart = () => {
+   return {
+      type: actionTypes.DELETE_ROOM_START,
+   };
+};
+
+const deleteRoomSuccess = () => {
+   return {
+      type: actionTypes.DELETE_ROOM_SUCCESS,
+   };
+};
+
+const deleteRoomFail = () => {
+   return {
+      type: actionTypes.DELETE_ROOM_FAIL,
+   };
+};
+
+export const onDeleteRoom = (roomId) => (dispatch) => {
+   const token = localStorage.getItem("token");
+   dispatch(deleteRoomStart());
+   axios
+      .delete(`/api/rooms/delete/${roomId}`, header(token))
+      .then((response) => {
+         dispatch(deleteRoomSuccess());
+         dispatch(onFlash("Delete Room Success", "success"));
+      })
+      .catch((err) => {
+         dispatch(deleteRoomFail());
+         dispatch(onFlash(err.response.data.msg, "fail"));
+      });
+};

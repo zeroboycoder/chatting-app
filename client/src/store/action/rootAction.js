@@ -1,4 +1,4 @@
-export { onLoadRoom, onJoinRoom, onCreateRoom } from "./room";
+export { onLoadRoom, onJoinRoom, onCreateRoom, onDeleteRoom } from "./room";
 export { onSentMessage, onLoadMessages, onAddMessage } from "./message";
 export { onAddmember } from "./member";
 export {

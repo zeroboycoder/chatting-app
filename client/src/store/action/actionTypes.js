@@ -16,6 +16,11 @@ export const CREATE_ROOMS_START = "CREATE_ROOMS_START";
 export const CREATE_ROOMS_SUCCESS = "CREATE_ROOMS_SUCCESS";
 export const CREATE_ROOMS_FAIL = "CREATE_ROOMS_FAIL";
 
+// Delete Room
+export const DELETE_ROOM_START = "DELETE_ROOM_START";
+export const DELETE_ROOM_SUCCESS = "DELETE_ROOM_SUCCESS";
+export const DELETE_ROOM_FAIL = "DELETE_ROOM_FAIL";
+
 // =================
 // Load All Messages
 // =================
