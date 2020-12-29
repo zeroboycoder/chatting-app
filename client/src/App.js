@@ -26,6 +26,8 @@ class App extends Component {
       socket.on("createMsg", (data) => {
          this.props.onAddMessage(data);
       });
+
+      socket.on("boradcast_msg", (data) => console.log(data));
    }
 
    render() {

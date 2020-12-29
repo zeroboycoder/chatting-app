@@ -114,6 +114,11 @@ class Room extends Component {
    };
 
    render() {
+      // Declear variable
+      let roomAvatarUrl;
+      let roomMembers = [];
+      let ownerId = "";
+
       // Model fof Add Member
       const modal = (
          <Modal showed={this.state.showed} clicked={this.showAddMemberHandler}>
@@ -140,9 +145,6 @@ class Room extends Component {
       );
 
       // Loop the room array and return roombox -> Left Side
-      let roomAvatarUrl;
-      let roomMembers = [];
-      let ownerId = "";
       const roomBoxs = this.props.rooms.map((room) => {
          if (room._id === this.props.match.params.roomId) {
             roomAvatarUrl = room.roomAvatarUrl;
@@ -184,6 +186,7 @@ class Room extends Component {
          <RoomDetail
             _id={this.state.roomId}
             ownerId={ownerId}
+            currentUserId={this.props.userId}
             roomAvatarUrl={roomAvatarUrl}
             roomName={this.props.roomName}
             roomMembers={roomMembers}

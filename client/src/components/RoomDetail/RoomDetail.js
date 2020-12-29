@@ -52,14 +52,16 @@ const RoomDetail = (props) => {
                <p>Members</p>
                <div className="w-full mt-1">{members}</div>
             </div>
-            <div className="RoomDetail__Group">
-               <button
-                  className="px-6 py-1.5 font-bold text-red-600 cursor-pointer"
-                  onClick={props.toggleDeleteRoomHandler}
-               >
-                  Delete Room
-               </button>
-            </div>
+            {props.currentUserId === props.ownerId ? (
+               <div className="RoomDetail__Group">
+                  <button
+                     className="px-6 py-1.5 font-bold text-red-600 cursor-pointer"
+                     onClick={props.toggleDeleteRoomHandler}
+                  >
+                     Delete Room
+                  </button>
+               </div>
+            ) : null}
          </div>
       </section>
    );

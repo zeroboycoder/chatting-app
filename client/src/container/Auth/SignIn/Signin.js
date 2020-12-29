@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import FacebookLogin from "react-facebook-login";
 import "./Signin.css";
+import FacebookLogin from "react-facebook-login";
 import signin_bg from "../../../asset/signin_bg.svg";
 import { AuthInput, AuthBtn } from "../../../components/Auth/Auth";
 import { checkValidation, canClickBtn } from "../../../util/helper";
@@ -42,6 +42,10 @@ class SignIn extends Component {
          },
       },
    };
+
+   componentDidMount() {
+      this.setState({ fbLogin: false });
+   }
 
    inputChangeHandler = (event, key) => {
       const value = event.target.value;
@@ -110,7 +114,7 @@ class SignIn extends Component {
       // Go to Sign In page
       const swapAuth = (
          // SwapAuthBtn -> App.css
-         <p className="text-sm tracking-wide">
+         <p className="text-base tracking-wide">
             New User?{" "}
             <span className="SwapAuthBtn" onClick={this.toSignUp}>
                Sign Up
@@ -122,11 +126,11 @@ class SignIn extends Component {
       const fbLogin = (
          <FacebookLogin
             appId="327829561590465"
-            autoLoad={true}
+            autoLoad={false}
             fields="name,email,picture"
             scope="public_profile,user_friends"
             callback={this.responseFacebook}
-            cssClass="FB_Login_Btn" // App.css
+            cssClass="FB_Login_Btn"
          />
       );
 
