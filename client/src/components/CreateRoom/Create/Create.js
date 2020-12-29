@@ -22,6 +22,9 @@ const Create = (props) => {
                id="room_image"
                onChange={(e) => props.changed(e, "imageValue", "file")} // event, label, input type
             />
+            <small className="my-1 text-gray-600">
+               Recommended 1:1 image ratio.
+            </small>
          </div>
          {/* Previe Image */}
          {props.previewImgValue ? (

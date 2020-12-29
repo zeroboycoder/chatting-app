@@ -1,5 +1,5 @@
 .SideDraw {
-   width: 300px;
+   width: 250px;
    height: 100vh;
    position: fixed;
    right: 0;
@@ -10,24 +10,32 @@
 
 /* SideDraw Body */
 .SideDraw__Body {
-   width: 260px;
-   margin-top: 20px;
+   width: 100%;
 }
 
 /* Avatar */
 .SideDraw__Body__Avatar {
-   width: 90px;
-   height: 90px;
+   width: 80px;
+   height: 80px;
+   margin: 10px 0;
 }
 
 .SideDraw__Body__Avatar img {
    width: 100%;
    height: 100%;
+   cursor: pointer;
 }
 
 /* SideDraw Nav */
 .SideDraw__Nav li {
-   margin: 5px 0;
+   margin: 0 0 10px 0;
+}
+
+.SideDraw__Nav li a:link,
+.SideDraw__Nav li a:visited,
+.SideDraw__Nav__Logout {
+   font: 400 20px/26px var(--font-family);
+   letter-spacing: 0.5px;
 }
 
 .SideDraw__Nav li a:hover,

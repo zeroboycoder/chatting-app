@@ -17,14 +17,14 @@ const RoomBox = (props) => {
          className={`RoomBox w-full px-6 bg-white cursor-pointer flex items-center ${classes.join()}`}
          onClick={() => goToChatRoom(props._id)}
       >
-         <div className="RoomBox__Img mr-4">
+         <div className="RoomBox__Img w-12 h-12 mr-4">
             <img
                src={props.roomAvatarUrl}
                alt="Room Avatar"
-               className="w-12 h-12 rounded-full"
+               className="w-full h-full rounded-full"
             />
          </div>
-         <div className="tracking-wide">
+         <div className="RoomBox__Info tracking-wide">
             <p className="text-lg font-bold">{props.roomName}</p>
             <p className="text-gray-800 text-sm">
                Members : {props.numOfMembers}

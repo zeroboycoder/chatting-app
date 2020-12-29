@@ -9,6 +9,11 @@ import { onLogout } from "../../../store/action/rootAction";
 const SideDraw = (props) => {
    const userAvatar = props.avatar ? props.avatar : defaultAvatar;
 
+   // Go To Profile
+   const goToProfile = () => {
+      props.history.push("/profile");
+   };
+
    //Logout Function
    const logoutFun = () => {
       props.onLogout(props);
@@ -23,7 +28,7 @@ const SideDraw = (props) => {
                   Rooms
                </NavLink>
             </li>
-            <li className="text-red-500">
+            <li className="SideDraw__Nav__Logout text-red-500">
                <div onClick={logoutFun}>Logout</div>
             </li>
          </React.Fragment>
@@ -45,24 +50,23 @@ const SideDraw = (props) => {
       <React.Fragment>
          <Backdrop showed={props.showed} clicked={props.toggleSideDraw} />
          <section
-            className="SideDraw flex justify-center"
+            className="SideDraw flex flex-col items-center"
             style={
                props.showed
                   ? { transform: "translateX(0)" }
                   : { transform: "translateX(100%)" }
             }
+            onClick={props.toggleSideDraw}
          >
-            <div className="SideDraw__Body">
-               <div className="SideDraw__Body__Avatar">
-                  <img src={userAvatar} alt="Avatar" />
-               </div>
-               <ul className="SideDraw__Nav" onClick={props.toggleSideDraw}>
-                  <li>
-                     <NavLink to="/profile">{props.name}</NavLink>
-                  </li>
-                  {authNav}
-               </ul>
+            <div className="SideDraw__Body__Avatar">
+               <img src={userAvatar} alt="Avatar" onClick={goToProfile} />
             </div>
+            <ul className="SideDraw__Nav text-center">
+               <li>
+                  <NavLink to="/profile">{props.name}</NavLink>
+               </li>
+               {authNav}
+            </ul>
          </section>
       </React.Fragment>
    );

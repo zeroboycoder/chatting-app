@@ -8,3 +8,15 @@
 .RoomBox.active {
    background-color: #dedede;
 }
+
+/* For Mobile */
+@media (max-width: 480px) {
+   .RoomBox__Img {
+      width: 42px;
+      height: 42px;
+   }
+
+   .RoomBox__Info p:first-of-type {
+      font-size: 17px;
+   }
+}

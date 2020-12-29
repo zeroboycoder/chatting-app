@@ -36,18 +36,18 @@ const CreateRoom = (props) => {
    return (
       <Modal showed={props.showed} clicked={props.cancelRoom}>
          <div className="CreateRoom__Choice">
-            <div
+            <button
                className={choice.value === "join" ? "active" : null}
                onClick={() => choiceHandler("join")}
             >
                Join
-            </div>
-            <div
+            </button>
+            <button
                className={choice.value === "create" ? "active" : null}
                onClick={() => choiceHandler("create")}
             >
                Create
-            </div>
+            </button>
          </div>
          {returnValue}
       </Modal>

@@ -78,25 +78,28 @@ class Profile extends Component {
       let profile = (
          <div>
             {modal}
-            <section className="Profile w-full flex flex-col justify-center items-center">
-               <div className="w-44 h-44 mb-4 relative">
-                  <img
-                     src={userAvatar}
-                     alt="User Profile"
-                     className="w-full h-full rounded-full"
-                  />
-                  <i
-                     className="fas fa-pencil-alt  absolute right-0 bottom-0 cursor-pointer"
-                     onClick={this.showModal}
-                  ></i>
-               </div>
-               <div className="Profile__Body w-96 text-center tracking-wide text-xl">
-                  <p className="text-3xl font-bold">{this.props.name}</p>
-                  <p className="font-bold">{this.props.email}</p>
-                  <p className="leading-normal">
-                     Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                     Dignissimos assumenda fugit eos ullam ipsa inventore!
-                  </p>
+            <section className="Profile">
+               <div className="Profile__Card">
+                  <div className="Profile__Img w-44 h-44 mb-4 relative">
+                     <img
+                        src={userAvatar}
+                        alt="User Profile"
+                        className="w-full h-full rounded-full"
+                     />
+                     <i
+                        className="fas fa-pencil-alt  absolute right-0 bottom-0 cursor-pointer"
+                        onClick={this.showModal}
+                     ></i>
+                  </div>
+                  <div className="Profile__Body w-96 text-center tracking-wide text-xl">
+                     <p className="text-3xl font-bold">{this.props.name}</p>
+                     <p className="font-bold">{this.props.email}</p>
+                     <p className="leading-normal">
+                        Lorem, ipsum dolor sit amet consectetur adipisicing
+                        elit. Dignissimos assumenda fugit eos ullam ipsa
+                        inventore!
+                     </p>
+                  </div>
                </div>
             </section>
          </div>

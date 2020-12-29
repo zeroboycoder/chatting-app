@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
+import "./Home.css";
 import RoomBox from "../../components/RoomBox/RoomBox";
 import Spinner from "../../components/UI/Spinner/Spinner";
 import CreateRoom from "../../components/CreateRoom/CreateRoom";
@@ -98,7 +99,7 @@ class Home extends Component {
             );
          });
          homeCom = (
-            <div className="w-10/12 mx-auto border border-gray-300">
+            <div className="Home w-10/12 mx-auto border border-gray-300">
                <CreateRoom
                   showed={this.state.showCreateRoom}
                   changed={this.inputChangeHandler}
