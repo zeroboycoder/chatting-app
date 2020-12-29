@@ -69,3 +69,29 @@
 .Toolbar__Logout:active {
    color: red;
 }
+
+/* NavIcon */
+.NavIcon,
+.NavIcon:visited {
+   display: none;
+   transition: all 0.3s;
+}
+
+.NavIcon:hover,
+.NavIcon:active {
+   background-color: #bcbcbc;
+}
+
+@media (max-width: 480px) {
+   .Toolbar__NavUl {
+      display: none;
+   }
+   .NavIcon {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 40px;
+      height: 40px;
+      font-size: 24px;
+   }
+}

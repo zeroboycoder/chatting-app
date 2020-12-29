@@ -51,7 +51,7 @@ const Toolbar = (props) => {
       );
    }
 
-   return (
+   const toolbar = (
       <div className="Toolbar w-full">
          <div className="w-10/12 mx-auto flex justify-between items-center">
             <div className="cursor-pointer" onClick={goToHomePage}>
@@ -65,9 +65,16 @@ const Toolbar = (props) => {
                </li>
                {auth}
             </ul>
+            <div
+               className="NavIcon rounded-full"
+               onClick={props.toggleSideDraw}
+            >
+               <i className="fas fa-ellipsis-v"></i>
+            </div>
          </div>
       </div>
    );
+   return toolbar;
 };
 
 const stateToProps = (state) => {
