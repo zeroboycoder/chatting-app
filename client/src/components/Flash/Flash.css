@@ -24,3 +24,12 @@
    background-color: #f7e9ea;
    box-shadow: 1px 1px 10px #c92838;
 }
+
+/* ========== */
+/* For Mobile */
+/* ========== */
+@media (max-width: 480px) {
+   .Flash {
+      width: 80%;
+   }
+}
