@@ -69,7 +69,9 @@ const addMessageSucess = (roomId, message) => {
 export const onAddMessage = (data) => (dispatch) => {
    try {
       dispatch(addMessageSucess(data.roomId, data.newMsg));
+      dispatch(onFlash("Success Msg", "success"));
    } catch (error) {
       dispatch(onFlash("Add Message Fail(on client)", "fail"));
+      dispatch(onFlash("Fail Msg", "fail"));
    }
 };

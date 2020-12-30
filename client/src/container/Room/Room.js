@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { io } from "socket.io-client";
 import { connect } from "react-redux";
 import "./Room.css";
 import RoomBox from "../../components/RoomBox/RoomBox";
@@ -219,10 +220,10 @@ class Room extends Component {
             <div className="Room__Body flex">
                {/* Room Body Left */}
                <div className="Room__Body__Left w-3/12">{roomBoxs}</div>
-               {/* Room Body Right */}
-               <div className="Room__Body__Right w-6/12 flex flex-col">
+               {/* Room Body Mid */}
+               <div className="Room__Body__Mid w-6/12 flex flex-col">
                   {/* Message */}
-                  <div className="Room__Body__Right__MessageBox">
+                  <div className="Room__Body__Mid__MessageBox">
                      {messageBoxs}
                      {/* Scroll to bottom */}
                      <div
@@ -232,7 +233,7 @@ class Room extends Component {
                      ></div>
                   </div>
                   {/* Input Box */}
-                  <div className="Room__Body__Right__InputBox">
+                  <div className="Room__Body__Mid__InputBox">
                      <InputBox
                         value={this.state.inputText}
                         changed={this.inputChangeHandler}
@@ -243,7 +244,7 @@ class Room extends Component {
                   </div>
                </div>
                {/* Room Body Right */}
-               <div className="Room__Body__Left w-3/12">{roomDetail}</div>
+               <div className="Room__Body__Right w-3/12">{roomDetail}</div>
             </div>
          </div>
       );

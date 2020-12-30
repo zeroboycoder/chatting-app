@@ -42,6 +42,7 @@
 }
 
 .Room__Body__Left,
+.Room__Body__Mid,
 .Room__Body__Right {
    margin-top: 2px;
    height: calc(100vh - 115px);
@@ -51,19 +52,18 @@
    overflow: scroll;
 }
 
-.Room__Body__Right__MessageBox {
-   height: calc(100% - 56px);
+.Room__Body__Mid__MessageBox {
+   height: calc(100vh - 112px);
    overflow: scroll;
 }
 
-.Room__Body__Right__InputBox {
-   height: 56px;
-   padding: 5px 20px;
-   background-color: #bcbcbc;
+.Room__Body__Mid__MessageBox::-webkit-scrollbar {
+   width: 10px;
 }
 
-.Room__Body__Right__MessageBox::-webkit-scrollbar {
-   width: 10px;
+.Room__Body__Mid__InputBox {
+   height: 56px;
+   background-color: #ccc;
 }
 
 /* Modal */
@@ -84,4 +84,56 @@
    border: 1px solid #ccc;
    border-radius: 6px;
    box-shadow: 1px 1px 6px #00000080;
+}
+
+/* ========== */
+/* For Mobile */
+/* ========== */
+@media (max-width: 480px) {
+   /* Room Nav */
+   .Room__Nav {
+      width: 100%;
+      padding: 0 20px;
+      height: 50px;
+   }
+
+   .Room__Nav div:first-of-type {
+      display: none;
+   }
+
+   .Room__Nav div:last-of-type {
+      width: 100%;
+   }
+
+   .Room__Nav div p {
+      font-size: 18px;
+      margin: 0;
+   }
+
+   .Room__Nav div abbr {
+      font-size: 26px;
+      width: 36px;
+      height: 36px;
+      margin: 0;
+   }
+
+   /* Room Body */
+   .Room__Body__Left,
+   .Room__Body__Right {
+      display: none;
+   }
+
+   .Room__Body__Mid {
+      width: 100%;
+   }
+
+   .Room__Body__Mid__MessageBox {
+      height: calc(100vh - 155px);
+   }
+
+   .Room__Body__Mid__InputBox {
+      width: 100%;
+      position: absolute;
+      bottom: 0;
+   }
 }

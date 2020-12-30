@@ -24,10 +24,9 @@ class App extends Component {
       const socket = io("http://localhost:5000");
       // const socket = io("https://me3t.herokuapp.com/");
       socket.on("createMsg", (data) => {
+         alert("Hello");
          this.props.onAddMessage(data);
       });
-
-      socket.on("boradcast_msg", (data) => console.log(data));
    }
 
    render() {
