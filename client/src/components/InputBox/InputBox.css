@@ -12,14 +12,15 @@
 /* Input Box */
 .InputBox__Input {
    position: relative;
+   width: 100%;
+   border-radius: 25px;
 }
 
 /* InputBox --> Input */
 .InputBox__Input input {
-   width: 100%;
+   width: 95%;
    font-size: 15px;
    padding: 5px 20px;
-   border-radius: 25px;
    outline: none;
 }
 
@@ -77,13 +78,16 @@
 /* ========== */
 /* For Mobile */
 /* ========== */
-/* InputBox --> Input */
-.InputBox__Input input {
-   padding: 6px 15px;
-}
+@media (max-width: 480px) {
+   /* InputBox --> Input */
+   .InputBox__Input input {
+      padding: 6px 15px;
+      max-width: 90%;
+   }
 
-/* Sent Button */
-.InputBox__Button {
-   margin-left: 10px;
-   height: 33px;
+   /* Sent Button */
+   .InputBox__Button {
+      margin-left: 10px;
+      height: 33px;
+   }
 }
