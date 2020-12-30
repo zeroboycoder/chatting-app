@@ -13,6 +13,7 @@
 .InputBox__Input {
    position: relative;
    width: 100%;
+   background-color: white;
    border-radius: 25px;
 }
 
