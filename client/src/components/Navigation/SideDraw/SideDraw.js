@@ -29,7 +29,9 @@ const SideDraw = (props) => {
                </NavLink>
             </li>
             <li className="SideDraw__Nav__Logout text-red-500">
-               <div onClick={logoutFun}>Logout</div>
+               <div className="cursor-pointer" onClick={logoutFun}>
+                  Logout
+               </div>
             </li>
          </React.Fragment>
       );

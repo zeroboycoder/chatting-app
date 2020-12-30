@@ -36,7 +36,7 @@ const InputBox = (props) => {
             onClick={props.clicked}
             className="InputBox__Button text-base font-bold bg-white"
          >
-            Send
+            <i className="fas fa-paper-plane"></i>
          </button>
       </div>
    );

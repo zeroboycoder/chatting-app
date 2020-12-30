@@ -49,8 +49,11 @@
 
 /* Sent Button */
 .InputBox__Button {
+   display: flex;
+   justify-content: center;
+   align-items: center;
    margin-left: 25px;
-   width: 90px;
+   width: 75px;
    height: 30px;
    color: var(--primary);
    border-radius: 7px;
@@ -67,15 +70,20 @@
    );
 }
 
+.InputBox__Button i {
+   font-size: 18px;
+}
+
 /* ========== */
 /* For Mobile */
 /* ========== */
 /* InputBox --> Input */
 .InputBox__Input input {
-   padding: 4px 15px;
+   padding: 6px 15px;
 }
 
 /* Sent Button */
 .InputBox__Button {
    margin-left: 10px;
+   height: 33px;
 }

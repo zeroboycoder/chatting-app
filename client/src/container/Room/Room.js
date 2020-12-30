@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { io } from "socket.io-client";
 import { connect } from "react-redux";
 import "./Room.css";
 import RoomBox from "../../components/RoomBox/RoomBox";

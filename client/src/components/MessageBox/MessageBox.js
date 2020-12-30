@@ -3,7 +3,7 @@ import "./MessageBox.css";
 import senderPf from "../../asset/default.jpg";
 
 const MessageBox = (props) => {
-   const messageBoxClasses = ["MessageBox", "m-4", "flex"];
+   const messageBoxClasses = ["MessageBox", "flex"];
    const senderNameClasses = ["text-base", "font-bold", "mb-2"];
    const timeClasses = ["text-xs", "mt-2"];
    let senderName = props.message.sender;
@@ -31,7 +31,11 @@ const MessageBox = (props) => {
          <div className="flex flex-col ml-3">
             <p className={senderNameClasses.join(" ")}>{senderName}</p>
             <div>
-               <p className="MessageBox__Message text-base px-3 py-2">
+               <p
+                  className={`MessageBox__Message text-base px-3 py-2 ${
+                     props.position === "justify-end" ? "MsgBgBlue" : null
+                  }`}
+               >
                   {props.message.message}
                </p>
                <p className={timeClasses.join(" ")}>{props.message.time}</p>

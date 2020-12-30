@@ -1,6 +1,27 @@
+.MessageBox {
+   margin: 12px;
+}
+
 .MessageBox__Message {
    max-width: 300px;
-   min-width: 200px;
+   min-width: 170px;
    border-radius: 5px;
    box-shadow: 2px 2px 6px #666, -2px -2px 4px #fff;
+}
+
+.MsgBgBlue {
+   color: white;
+   background: linear-gradient(
+      to right,
+      var(--gradient-from),
+      var(--gradient-to)
+   );
+}
+/* ========== */
+/* For Mobile */
+/* ========== */
+@media (max-width: 480px) {
+   .MessageBox {
+      margin: 6px 12px;
+   }
 }

@@ -35,8 +35,8 @@ if (process.env.NODE_ENV === "production") {
 }
 
 // Running Server
-// const uri = config.get("MONGO_LOCAL_URI");
-const uri = `mongodb+srv://${process.env.MONGO_USER}:${process.env.MONGO_PW}@cluster0.uoyxp.mongodb.net/meet?retryWrites=true&w=majority`;
+const uri = config.get("MONGO_LOCAL_URI");
+// const uri = `mongodb+srv://${process.env.MONGO_USER}:${process.env.MONGO_PW}@cluster0.uoyxp.mongodb.net/meet?retryWrites=true&w=majority`;
 const options = {
    useNewUrlParser: true,
    useUnifiedTopology: true,

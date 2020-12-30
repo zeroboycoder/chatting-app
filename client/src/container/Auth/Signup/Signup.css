@@ -14,3 +14,16 @@
 .Signup_Left p {
    font-size: 42px;
 }
+
+/* ========== */
+/* For Mobile */
+/* ========== */
+@media (max-width: 480px) {
+   .Signup_Left {
+      display: none;
+   }
+
+   .Signup_Right {
+      width: 100%;
+   }
+}

@@ -28,7 +28,7 @@ exports.loadMessage = async (req, res, next) => {
 
 exports.createMessage = async (req, res, next) => {
    const { roomId, senderId, message } = req.body;
-   const time = moment().format("LT");
+   const time = moment().format("D.MMM.Y h:mm:ss A");
    const messageObj = new messageModel({
       roomId,
       sender: senderId,

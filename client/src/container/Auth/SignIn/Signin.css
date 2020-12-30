@@ -32,3 +32,15 @@
    background-color: #3b5998;
    box-shadow: 2px 2px 6px #000000c9, 1px 1px 4px #999 inset;
 }
+
+/* ========== */
+/* For Mobile */
+/* ========== */
+@media (max-width: 480px) {
+   .Signin_Left {
+      width: 100%;
+   }
+   .Signin_Right {
+      display: none;
+   }
+}

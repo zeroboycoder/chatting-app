@@ -63,7 +63,8 @@
 
 .Room__Body__Mid__InputBox {
    height: 56px;
-   background-color: #ccc;
+   background-color: #dedede;
+   padding: 0 10px;
 }
 
 /* Modal */
@@ -92,6 +93,9 @@
 @media (max-width: 480px) {
    /* Room Nav */
    .Room__Nav {
+      position: fixed;
+      z-index: 500;
+      background-color: white;
       width: 100%;
       padding: 0 20px;
       height: 50px;
@@ -128,12 +132,18 @@
    }
 
    .Room__Body__Mid__MessageBox {
-      height: calc(100vh - 155px);
+      margin-top: 50px;
+      height: calc(100vh - 112px);
    }
 
    .Room__Body__Mid__InputBox {
       width: 100%;
       position: absolute;
       bottom: 0;
+   }
+
+   /* Modal */
+   .Room__AddMember {
+      width: 300px;
    }
 }
