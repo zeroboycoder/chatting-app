@@ -21,8 +21,8 @@ class App extends Component {
       }
 
       // For Socket IO Client
-      const socket = io("http://localhost:5000");
-      // const socket = io("https://me3t.herokuapp.com/");
+      // const socket = io("http://localhost:5000");
+      const socket = io("https://me3t.herokuapp.com/");
       socket.on("createMsg", (data) => {
          this.props.onAddMessage(data);
       });
